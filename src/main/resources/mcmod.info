@@ -1,0 +1,16 @@
+[
+{
+  "modid": "papermario",
+  "name": "Paper Mario Mod",
+  "description": "",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["MrIbby", "Sdentin"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
