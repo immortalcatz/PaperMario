@@ -26,7 +26,7 @@ public class RecipeSpaceFood extends PaperMarioRecipe {
         if (item == PaperMarioItems.dried_bouquet) {
             if (hasDriedBoquet) return false;
             hasDriedBoquet = true;
-        } else if (item instanceof PaperMarioItem) {//TODO
+        } else if (item instanceof IPaperMarioItem) {//TODO
             if (hasHPFPItem) return false;
             hasHPFPItem = true;
         } else {

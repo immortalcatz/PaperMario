@@ -157,6 +157,13 @@ public class Recipes {
         addRecipe(TAYCE_T, yummy_meal, whacka_bump);
         addRecipe(TAYCE_T, yummy_meal, dried_fruit, dried_pasta);
         addRecipe(TAYCE_T, yummy_meal, dried_fruit, iced_potato);
+        addRecipe(TAYCE_T, yummy_meal, iced_potato, strange_leaf);
+        addRecipe(TAYCE_T, yummy_meal, potato_salad, hot_shroom);
+        addRecipe(TAYCE_T, yummy_meal, potato_salad, spaghetti);
+        addRecipe(TAYCE_T, yummy_meal, ultra_shroom, dried_pasta);
+        addRecipe(TAYCE_T, yummy_meal, ultra_shroom, egg);
+        addRecipe(TAYCE_T, yummy_meal, ultra_shroom, fire_flower);
+        addRecipe(TAYCE_T, yummy_meal, ultra_shroom, iced_potato);
         /// PAPER MARIO: THE THOUSAND YEAR DOOR ///
         GameRegistry.addRecipe(new RecipeSpaceFood());
         addRecipe(ZESS_T, boos_sheet, point_swap, repel_cape);
@@ -458,7 +465,7 @@ public class Recipes {
         addRecipe(DYLLIS, ink_pasta, fresh_pasta_bunch, inky_sauce);
         addRecipe(DYLLIS, koopa_dumpling, cake_mix, turtley_leaf);
         addRecipe(DYLLIS, koopa_pilaf, turtley_leaf, horsetail);
-        addRecipe(DYLLIS, koopasta_dish, fresh_pasta_bunch, turtley_leaf);
+        addRecipe(DYLLIS, koopasta, fresh_pasta_bunch, turtley_leaf);
         addRecipe(DYLLIS, love_pudding, lovely_chocolate, big_egg);
         addRecipe(DYLLIS, love_noodle_dish, lovely_chocolate, fresh_pasta_bunch);
         addRecipe(DYLLIS, lovely_chocolate, mild_cocoa_bean, fire_burst);

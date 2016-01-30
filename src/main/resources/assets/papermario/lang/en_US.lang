@@ -1,6 +1,7 @@
 itemGroup.papermario.pm=Paper Mario
-itemGroup.papermario.pmttyd=Paper Mario: The Thousand Year Door
+itemGroup.papermario.pmttyd=Paper Mario: The Thousand-Year Door
 itemGroup.papermario.spm=Super Paper Mario
+itemGroup.papermario.pmss=Paper Mario: Sticker Star
 
 item.papermario.mystery.name=Mystery
 item.papermario.cakeMix.name=Cake Mix
@@ -192,6 +193,7 @@ item.papermario.spaghetti.name=Spaghetti
 item.papermario.spicyPasta.name=Spicy Pasta
 item.papermario.spicySoup.name=Spicy Soup
 item.papermario.superShroom.name=Super Shroom
+item.papermario.superSoda.name=Super Soda
 item.papermario.tastyTonic.name=Tasty Tonic
 item.papermario.trialStew.name=Trial Stew
 item.papermario.turtleyLeaf.name=Turtley Leaf

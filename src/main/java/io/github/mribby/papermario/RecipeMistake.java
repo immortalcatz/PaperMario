@@ -24,7 +24,7 @@ public class RecipeMistake implements IRecipe {
             ItemStack stack = crafting.getStackInSlot(i);
             if (stack == null) continue;
 
-            if (stack.getItem() instanceof PaperMarioItem) {
+            if (stack.getItem() instanceof IPaperMarioItem) {
                 if (item1 == null) {
                     item1 = stack.getItem();
                 } else if (item2 == null) {
