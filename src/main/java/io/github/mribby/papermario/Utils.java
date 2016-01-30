@@ -18,6 +18,8 @@ public class Utils {
      * @return Minecraft health
      */
     public static float getHealthFloatFromHP(int hp) {
+        if (hp == 0) return 1;
+
         float health;
         float divisor = 1F;
 
@@ -26,6 +28,6 @@ public class Utils {
             health = hp / divisor;
         } while (health >= MAX_PLAYER_HEALTH);
 
-        return Math.max(health, 1);
+        return health;
     }
 }

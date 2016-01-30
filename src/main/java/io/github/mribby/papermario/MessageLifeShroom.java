@@ -54,7 +54,7 @@ public class MessageLifeShroom implements IMessage, IMessageHandler<MessageLifeS
             double velX = rand.nextGaussian() * 0.02D;
             double velY = rand.nextGaussian() * 0.02D;
             double velZ = rand.nextGaussian() * 0.02D;
-            world.spawnParticle("heart", x, y, z, velX, velY, velZ);
+            world.spawnParticle("happyVillager", x, y, z, velX, velY, velZ);
         }
 
         return null;

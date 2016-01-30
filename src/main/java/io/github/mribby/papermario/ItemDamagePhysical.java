@@ -4,6 +4,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
 public class ItemDamagePhysical extends ItemDamage {
@@ -12,10 +13,10 @@ public class ItemDamagePhysical extends ItemDamage {
     }
 
     @Override
-    protected boolean useItem(UseType useType, ItemStack stack, World world, EntityPlayer player, EntityLivingBase target) {
-        if (useType == UseType.ENTITY) {
-            if (!target.worldObj.isRemote) {
-                target.attackEntityFrom(DamageSource.causePlayerDamage(player), getDamage());
+    protected boolean useItem(ItemStack stack, World world, EntityPlayer player, MovingObjectPosition target) {
+        if (target.entityHit != null) {
+            if (!world.isRemote) {
+                target.entityHit.attackEntityFrom(DamageSource.causePlayerDamage(player), getDamage());
             }
 
             return true;

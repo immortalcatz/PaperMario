@@ -24,7 +24,7 @@ public class ItemDrink extends PaperMarioItem {
     }
 
     @Override
-    public ItemStack onEaten(ItemStack stack, World world, EntityPlayer player) {
+    public ItemStack onItemUseFinish(ItemStack stack, World world, EntityPlayer player) {
         if (!player.capabilities.isCreativeMode) {
             --stack.stackSize;
         }

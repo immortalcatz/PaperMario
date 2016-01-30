@@ -22,9 +22,9 @@ public class PaperMarioItemFood extends ItemFood implements IPaperMarioItem {
     }
 
     @Override
-    public ItemStack onEaten(ItemStack stack, World world, EntityPlayer player) {
+    public ItemStack onItemUseFinish(ItemStack stack, World world, EntityPlayer player) {
         --stack.stackSize;
-        player.getFoodStats().func_151686_a(this, stack);
+        player.getFoodStats().addStats(this, stack);
         world.playSoundAtEntity(player, "random.burp", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F);
         onFoodEaten(stack, world, player);
         return stack;

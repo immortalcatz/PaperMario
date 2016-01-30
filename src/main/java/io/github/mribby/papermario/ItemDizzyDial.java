@@ -1,8 +1,8 @@
 package io.github.mribby.papermario;
 
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
 public class ItemDizzyDial extends ItemBattle {
@@ -13,7 +13,7 @@ public class ItemDizzyDial extends ItemBattle {
     }
 
     @Override
-    protected boolean useItem(UseType useType, ItemStack stack, World world, EntityPlayer player, EntityLivingBase target) {
+    protected boolean useItem(ItemStack stack, World world, EntityPlayer player, MovingObjectPosition target) {
         return false;
     }
 }

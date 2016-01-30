@@ -55,7 +55,8 @@ public class PaperMarioItems {
     public static final Item potato_salad = new PaperMarioItemFood(10, 0, PM).setUnlocalizedName("papermario.potatoSalad").setTextureName("papermario:potato_salad");
     public static final Item nutty_cake = new PaperMarioItemFood(0, 10, PM).setUnlocalizedName("papermario.nuttyCake").setTextureName("papermario:nutty_cake");
     public static final Item boiled_egg = new PaperMarioItemFood(8, 8, PM).setUnlocalizedName("papermario.boiledEgg").setTextureName("papermario:boiled_egg");
-    /*evil!*/public static final Item yoshi_cookie = new PaperMarioItemFood(15, 15, PM).setUnlocalizedName("papermario.yoshiCookie").setTextureName("papermario:yoshi_cookie");
+    public static final Item yoshi_cookie = new PaperMarioItemFood(15, 15, PM).setUnlocalizedName("papermario.yoshiCookie").setTextureName("papermario:yoshi_cookie");
+    public static final Item evil_yoshi_cookie = new PaperMarioItemFood(-15, -15, PM).setAlwaysEdible().setUnlocalizedName("papermario.yoshiCookieEvil").setTextureName("papermario:evil_yoshi_cookie");
 
     /// PAPER MARIO: THE THOUSAND YEAR DOOR ///
 
@@ -326,6 +327,7 @@ public class PaperMarioItems {
         registerItem(nutty_cake, "nutty_cake");
         registerItem(boiled_egg, "boiled_egg");
         registerItem(yoshi_cookie, "yoshi_cookie");
+        registerItem(evil_yoshi_cookie, "evil_yoshi_cookie");
         /// PAPER MARIO: THE THOUSAND YEAR DOOR ///
         registerItem(fright_mask, "fright_mask");
         registerItem(repel_cape, "repel_cape");
@@ -549,7 +551,7 @@ public class PaperMarioItems {
         if (item instanceof PaperMarioItemFood) {
             PaperMarioItemFood food = (PaperMarioItemFood) item;
             ItemStack stack = new ItemStack(food);
-            System.out.println(stack.getDisplayName() + ": " + food.func_150905_g(stack) + " hunger, " + food.func_150906_h(stack) + " saturation");
+            System.out.println(stack.getDisplayName() + ": " + food.getHealAmount(stack) + " hunger, " + food.getSaturationModifier(stack) + " saturation");
         } else if (item instanceof ItemDrink) {
             ItemDrink drink = (ItemDrink) item;
             System.out.println(new ItemStack(drink).getDisplayName() + ": " + drink.getHealAmount() + " health");
