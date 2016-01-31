@@ -1,5 +1,7 @@
-package io.github.mribby.papermario;
+package io.github.mribby.papermario.item;
 
+import io.github.mribby.papermario.Game;
+import io.github.mribby.papermario.PaperMarioMod;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;

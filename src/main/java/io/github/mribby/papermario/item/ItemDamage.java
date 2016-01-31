@@ -1,4 +1,7 @@
-package io.github.mribby.papermario;
+package io.github.mribby.papermario.item;
+
+import io.github.mribby.papermario.Game;
+import io.github.mribby.papermario.Utils;
 
 public abstract class ItemDamage extends ItemBattle {
     private final float damage;

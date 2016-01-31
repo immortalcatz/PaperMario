@@ -1,5 +1,7 @@
-package io.github.mribby.papermario;
+package io.github.mribby.papermario.item.crafting;
 
+import io.github.mribby.papermario.item.IPaperMarioItem;
+import io.github.mribby.papermario.item.PaperMarioItems;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

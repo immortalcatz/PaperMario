@@ -1,5 +1,6 @@
 package io.github.mribby.papermario;
 
+import io.github.mribby.papermario.item.PaperMarioItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 

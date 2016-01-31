@@ -1,5 +1,7 @@
-package io.github.mribby.papermario;
+package io.github.mribby.papermario.item.crafting;
 
+import io.github.mribby.papermario.Chef;
+import io.github.mribby.papermario.item.PaperMarioItems;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -9,7 +11,7 @@ import java.util.List;
 
 public class RecipeMystery extends PaperMarioRecipe {
     public RecipeMystery() {
-        super(1);
+        super(1, new ItemStack(PaperMarioItems.miracle_dinner));
     }
 
     @Override

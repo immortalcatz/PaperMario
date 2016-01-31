@@ -1,6 +1,6 @@
-package io.github.mribby.papermario;
+package io.github.mribby.papermario.item;
 
-import net.minecraft.entity.EntityLivingBase;
+import io.github.mribby.papermario.Game;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntitySnowball;
 import net.minecraft.item.ItemStack;
@@ -15,10 +15,6 @@ public class ItemDamageThrown extends ItemDamage {
     @Override
     protected boolean useItem(ItemStack stack, World world, EntityPlayer player, MovingObjectPosition target) {
         if (target == null) {
-            if (!player.capabilities.isCreativeMode) {
-                --stack.stackSize;
-            }
-
             world.playSoundAtEntity(player, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 
             if (!world.isRemote) {

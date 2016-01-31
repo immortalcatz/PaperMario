@@ -52,7 +52,6 @@ item.papermario.friedShroom.name=Fried Shroom
 item.papermario.frozenFries.name=Frozen Fries
 item.papermario.goomnut.name=Goomnut
 item.papermario.healthyJuice.name=Healthy Juice
-item.papermario.heart.name=Heart
 item.papermario.honeyCandy.name=Honey Candy
 item.papermario.honeyShroom.name=Honey Shroom
 item.papermario.honeySuper.name=Honey Super
@@ -67,7 +66,6 @@ item.papermario.jellyUltra.name=Jelly Ultra
 item.papermario.kookyCookie.name=Kooky Cookie
 item.papermario.koopaLeaf.name=Koopa Leaf
 item.papermario.koopaTea.name=Koopa Tea
-item.papermario.koopasta.name=Koopasta
 item.papermario.lemon.name=Lemon
 item.papermario.lemonCandy.name=Lemon Candy
 item.papermario.lifeShroom.name=Life Shroom
@@ -89,12 +87,15 @@ item.papermario.spicySoup.name=Spicy Soup
 item.papermario.stinkyHerb.name=Stinky Herb
 item.papermario.strangeLeaf.name=Strange Leaf
 item.papermario.superShroom.name=Super Shroom
+item.papermario.sweetShroom.name=Sweet Shroom
 item.papermario.tastyTonic.name=Tasty Tonic
 item.papermario.ultraShroom.name=Ultra Shroom
 item.papermario.whackaBump.name=Whacka Bump
 item.papermario.yellowBerry.name=Yellow Berry
 item.papermario.yoshiCookie.name=Yoshi Cookie
 item.papermario.yummyMeal.name=Yummy Meal
+
+item.papermario.yoshiCookieEvil.name=Evil Yoshi Cookie
 
 ### PAPER MARIO: THE THOUSAND YEAR DOOR ###
 
@@ -183,7 +184,6 @@ item.papermario.peachyPeach.name=Peachy Peach
 item.papermario.poisonMushroom.name=Poison Mushroom
 item.papermario.shroomBroth.name=Shroom Broth
 item.papermario.shroomCake.name=Shroom Cake
-item.papermario.shroomFry.name=Shroom Fry
 item.papermario.shroomRoast.name=Shroom Roast
 item.papermario.shroomSteak.name=Shroom Steak
 item.papermario.slowShroom.name=Slow Shroom
@@ -196,7 +196,6 @@ item.papermario.superShroom.name=Super Shroom
 item.papermario.superSoda.name=Super Soda
 item.papermario.tastyTonic.name=Tasty Tonic
 item.papermario.trialStew.name=Trial Stew
-item.papermario.turtleyLeaf.name=Turtley Leaf
 item.papermario.ultraShroom.name=Ultra Shroom
 item.papermario.whackaBump.name=Whacka Bump
 item.papermario.zessCookie.name=Zess Cookie
@@ -227,7 +226,6 @@ item.papermario.voltShroom.name=Volt Shroom
 # Defense Items
 item.papermario.blockBlock.name=Block Block
 item.papermario.courageShell.name=Courage Shell
-item.papermario.turtleyLeaf.name=Turtley Leaf
 
 # Recovery Items
 item.papermario.bigEgg.name=Big Egg
@@ -268,8 +266,6 @@ item.papermario.yellowApple.name=Yellow Apple
 # Other
 item.papermario.catchCard.name=Catch Card
 item.papermario.catchCardSP.name=Catch Card SP
-item.papermario.goldBar.name=Gold Bar
-item.papermario.goldBar3.name=Gold Bar x3
 item.papermario.goldMedal.name=Gold Medal
 item.papermario.hpPlus.name=HP Plus
 item.papermario.megaStar.name=Mega Star
@@ -287,7 +283,6 @@ item.papermario.stopWatch.name=Stop Watch
 item.papermario.blockMeal.name=Block Meal
 item.papermario.dangerousDelight.name=Dangerous Delight
 item.papermario.dayzeeSyrup.name=Dayzee Syrup
-item.papermario.friedShroomPlate.name=Fried Shroom Plate
 item.papermario.goldenMeal.name=Golden Meal
 item.papermario.hamburger.name=Hamburger
 item.papermario.herbTea.name=Herb Tea
@@ -333,7 +328,6 @@ item.papermario.horsetailTart.name=Horsetail Tart
 item.papermario.inkPastaDish.name=Ink Pasta Dish
 item.papermario.koopaDumpling.name=Koopa Dumpling
 item.papermario.koopaPilaf.name=Koopa Pilaf
-item.papermario.koopastaDish.name=Koopasta Dish
 item.papermario.loveNoodleDish.name=Love Noodle Dish
 item.papermario.lovelyChocolate.name=Lovely Chocolate
 item.papermario.luxuriousSet.name=Luxurious Set

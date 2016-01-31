@@ -1,22 +1,28 @@
-package io.github.mribby.papermario;
+package io.github.mribby.papermario.item;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.util.EnumHelper;
 
 import static io.github.mribby.papermario.Game.*;
 
 public class PaperMarioItems {
 
+    public static final ItemArmor.ArmorMaterial STONE_CAP_MATERIAL = EnumHelper.addArmorMaterial("STONE_CAP", 2, new int[]{20, 0, 0, 0}, 0);
+    public static final AttributeModifier STONE_CAP_MODIFIER = new AttributeModifier("Stone cap speed reduction", -1.0D, 2).setSaved(false);;
+
     /// PAPER MARIO ///
 
-    public static final Item snowman_doll = new PaperMarioItem(PM).setUnlocalizedName("papermario.snowmanDoll").setTextureName("papermario:snowman_doll");
-    public static final Item pebble = new PaperMarioItem(PM).setUnlocalizedName("papermario.pebble").setTextureName("papermario:pebble");
+    public static final Item snowman_doll = new ItemSnowmanDoll();
+    public static final Item pebble = new ItemDamageThrown(1, PM).setUnlocalizedName("papermario.pebble").setTextureName("papermario:pebble");
     public static final Item dusty_hammer = new ItemDamagePhysical(1, PM).setUnlocalizedName("papermario.dustyHammer").setTextureName("papermario:dusty_hammer");
-    public static final Item stone_cap = new PaperMarioItem(PM).setUnlocalizedName("papermario.stoneCap").setTextureName("papermario:stone_cap");
+    public static final Item stone_cap = new ItemStoneCap();
     public static final Item apple = new PaperMarioItemFood(5, 0, PM).setUnlocalizedName("papermario.apple").setTextureName("papermario:apple");
-    public static final Item repel_gel = new PaperMarioItem(PM).setUnlocalizedName("papermario.repelGel").setTextureName("papermario:repel_gel");
-    public static final Item fright_jar = new PaperMarioItem(PM).setUnlocalizedName("papermario.frightJar").setTextureName("papermario:fright_jar");
+    public static final Item repel_gel = new ItemRepelGel();
+    public static final Item fright_jar = new ItemFrightJar();
     public static final Item super_soda = new ItemSuperSoda();
     public static final Item lemon = new PaperMarioItemFood(1, 2, PM).setUnlocalizedName("papermario.lemon").setTextureName("papermario:lemon");
     public static final Item lime = new PaperMarioItemFood(0, 3, PM).setUnlocalizedName("papermario.lime").setTextureName("papermario:lime");
@@ -25,7 +31,7 @@ public class PaperMarioItems {
     public static final Item yellow_berry = new PaperMarioItemFood(3, 3, PM).setUnlocalizedName("papermario.yellowBerry").setTextureName("papermario:yellow_berry");
     public static final Item bubble_berry = new PaperMarioItemFood(0, 5, PM).setUnlocalizedName("papermario.bubbleBerry").setTextureName("papermario:bubble_berry");
     public static final Item goomnut = new PaperMarioItemFood(0, 3, PM).setUnlocalizedName("papermario.goomnut").setTextureName("papermario:goomnut");
-    public static final Item koopa_leaf = new PaperMarioItem(PM).setUnlocalizedName("papermario.koopaLeaf").setTextureName("papermario:koopa_leaf");
+    public static final Item koopa_leaf = new PaperMarioItemFood(0, 3, PM, PMTTYD, SPM).setUnlocalizedName("papermario.koopaLeaf").setTextureName("papermario:koopa_leaf");
     public static final Item dried_pasta = new PaperMarioItemFood(3, 2, PM).setUnlocalizedName("papermario.driedPasta").setTextureName("papermario:dried_pasta");
     public static final Item dried_fruit = new PaperMarioItemFood(15, 0, PM).setUnlocalizedName("papermario.driedFruit").setTextureName("papermario:dried_fruit");
     public static final Item strange_leaf = new PaperMarioItemFood(0, 5, PM).setUnlocalizedName("papermario.strangeLeaf").setTextureName("papermario:strange_leaf");
@@ -34,9 +40,9 @@ public class PaperMarioItems {
     public static final Item stinky_herb = new PaperMarioItemFood(0, 5, PM).setUnlocalizedName("papermario.stinkyHerb").setTextureName("papermario:stinky_herb");
     public static final Item iced_potato = new PaperMarioItemFood(5, 0, PM).setUnlocalizedName("papermario.icedPotato").setTextureName("papermario:iced_potato");
     public static final Item apple_pie = new PaperMarioItemFood(5, 15, PM).setUnlocalizedName("papermario.applePie").setTextureName("papermario:apple_pie");
-    public static final Item fried_shroom = new PaperMarioItem(PM).setUnlocalizedName("papermario.friedShroom").setTextureName("papermario:fried_shroom");
+    public static final Item fried_shroom = new PaperMarioItemFood(6, 2, PM).setUnlocalizedName("papermario.friedShroom").setTextureName("papermario:fried_shroom");
     public static final Item hot_shroom = new PaperMarioItemFood(15, 5, PM).setUnlocalizedName("papermario.hotShroom").setTextureName("papermario:hot_shroom");
-    public static final Item sweet_shroom = new PaperMarioItem(PM).setUnlocalizedName("papermario.sweetShroom").setTextureName("papermario:sweet_shroom");
+    public static final Item sweet_shroom = new PaperMarioItemFood(30, 20, PM).setUnlocalizedName("papermario.sweetShroom").setTextureName("papermario:sweet_shroom");
     public static final Item yummy_meal = new PaperMarioItemFood(20, 20, PM).setUnlocalizedName("papermario.yummyMeal").setTextureName("papermario:yummy_meal");
     public static final Item healthy_juice = new ItemDrink(40, PM).setUnlocalizedName("papermario.healthyJuice").setTextureName("papermario:healthy_juice");
     public static final Item bland_meal = new PaperMarioItemFood(10, 10, PM).setUnlocalizedName("papermario.blandMeal").setTextureName("papermario:bland_meal");
@@ -49,7 +55,7 @@ public class PaperMarioItems {
     public static final Item coco_pop = new PaperMarioItemFood(3, 15, PM).setUnlocalizedName("papermario.cocoPop").setTextureName("papermario:coco_pop");
     public static final Item lemon_candy = new PaperMarioItemFood(5, 15, PM).setUnlocalizedName("papermario.lemonCandy").setTextureName("papermario:lemon_candy");
     public static final Item jelly_pop = new PaperMarioItemFood(0, 64, PM).setUnlocalizedName("papermario.jellyPop").setTextureName("papermario:jelly_pop");
-    /*special:*/public static final Item strange_cake = new PaperMarioItem(PM).setUnlocalizedName("papermario.strangeCake").setTextureName("papermario:strange_cake");
+    public static final Item strange_cake = new ItemStrangeCake();
     public static final Item kooky_cookie = new PaperMarioItemFood(0, 15, PM).setUnlocalizedName("papermario.kookyCookie").setTextureName("papermario:kooky_cookie");
     public static final Item frozen_fries = new PaperMarioItemFood(15, 0, PM).setUnlocalizedName("papermario.frozenFries").setTextureName("papermario:frozen_fries");
     public static final Item potato_salad = new PaperMarioItemFood(10, 0, PM).setUnlocalizedName("papermario.potatoSalad").setTextureName("papermario:potato_salad");
@@ -62,7 +68,7 @@ public class PaperMarioItems {
 
     public static final Item fright_mask = new PaperMarioItem(PMTTYD).setUnlocalizedName("papermario.frightMask").setTextureName("papermario:fright_mask");
     public static final Item repel_cape = new PaperMarioItem(PMTTYD).setUnlocalizedName("papermario.repelCape").setTextureName("papermario:repel_cape");
-    /*special:*/public static final Item tasty_tonic = new PaperMarioItem(PM, PMTTYD).setUnlocalizedName("papermario.tastyTonic").setTextureName("papermario:tasty_tonic");
+    public static final Item tasty_tonic = new ItemTastyTonic();
     public static final Item jammin_jelly = new PaperMarioItemFood(0, 50, PM, PMTTYD).setUnlocalizedName("papermario.jamminJelly").setTextureName("papermario:jammin_jelly");
     public static final Item ruin_powder = new PaperMarioItem(PMTTYD).setUnlocalizedName("papermario.ruinPowder").setTextureName("papermario:ruin_powder");
     public static final Item boos_sheet = new PaperMarioItem(PMTTYD).setUnlocalizedName("papermario.boosSheet").setTextureName("papermario:boos_sheet");
@@ -122,6 +128,7 @@ public class PaperMarioItems {
     public static final Item poison_mushroom = new PaperMarioItem(PMTTYD).setUnlocalizedName("papermario.poisonMushroom").setTextureName("papermario:poison_mushroom");
     public static final Item mushroom_crepe = new PaperMarioItem(PMTTYD, SPM).setUnlocalizedName("papermario.mushroomCrepe").setTextureName("papermario:mushroom_crepe");
     public static final Item inky_sauce = new PaperMarioItem(PMTTYD, SPM).setUnlocalizedName("papermario.inkySauce").setTextureName("papermario:inky_sauce");
+    // trial stew: set saturation to 0 and reduce enough hunger to prevent regen
     public static final Item trial_stew = new PaperMarioItem(PMTTYD, SPM).setUnlocalizedName("papermario.trialStew").setTextureName("papermario:trial_stew");
     public static final Item peach_tart = new PaperMarioItem(PMTTYD, SPM).setUnlocalizedName("papermario.peachTart").setTextureName("papermario:peach_tart");
     public static final Item omelette_meal = new PaperMarioItem(PMTTYD).setUnlocalizedName("papermario.omeletteMeal").setTextureName("papermario:omelette_meal");
@@ -137,7 +144,6 @@ public class PaperMarioItems {
     public static final Item golden_leaf = new PaperMarioItem(PMTTYD, SPM).setUnlocalizedName("papermario.goldenLeaf").setTextureName("papermario:golden_leaf");
     public static final Item fresh_pasta = new PaperMarioItem(PMTTYD).setUnlocalizedName("papermario.freshPasta").setTextureName("papermario:fresh_pasta");
     public static final Item keel_mango = new PaperMarioItem(PMTTYD, SPM).setUnlocalizedName("papermario.keelMango").setTextureName("papermario:keel_mango");
-    public static final Item turtley_leaf = new PaperMarioItemFood(0, 3, PMTTYD, SPM).setUnlocalizedName("papermario.turtleyLeaf").setTextureName("papermario:turtley_leaf");
     public static final Item mystic_egg = new PaperMarioItem(PMTTYD).setUnlocalizedName("papermario.mysticEgg").setTextureName("papermario:mystic_egg");
     public static final Item spite_pouch = new PaperMarioItem(PMTTYD).setUnlocalizedName("papermario.spitePouch").setTextureName("papermario:spite_pouch");
     public static final Item courage_meal = new PaperMarioItem(PMTTYD).setUnlocalizedName("papermario.courageMeal").setTextureName("papermario:courage_meal");
@@ -161,7 +167,6 @@ public class PaperMarioItems {
     public static final Item zess_deluxe = new PaperMarioItem(PMTTYD).setUnlocalizedName("papermario.zessDeluxe").setTextureName("papermario:zess_deluxe");
     public static final Item shroom_steak = new PaperMarioItemFood(30, 10, PM, PMTTYD, SPM).setUnlocalizedName("papermario.shroomSteak").setTextureName("papermario:shroom_steak");
     public static final Item shroom_roast = new PaperMarioItem(PMTTYD).setUnlocalizedName("papermario.shroomRoast").setTextureName("papermario:shroom_roast");
-    public static final Item shroom_fry = new PaperMarioItem(PMTTYD).setUnlocalizedName("papermario.shroomFry").setTextureName("papermario:shroom_fry");
     public static final Item icicle_pop = new PaperMarioItem(PMTTYD).setUnlocalizedName("papermario.iciclePop").setTextureName("papermario:icicle_pop");
     public static final Item zess_frappe = new PaperMarioItem(PMTTYD).setUnlocalizedName("papermario.zessFrappe").setTextureName("papermario:zess_frappe");
     public static final Item dried_bouquet = new PaperMarioItem(PMTTYD).setUnlocalizedName("papermario.driedBouquet").setTextureName("papermario:dried_bouquet");
@@ -211,7 +216,6 @@ public class PaperMarioItems {
     public static final Item block_meal = new PaperMarioItem(SPM).setUnlocalizedName("papermario.blockMeal").setTextureName("papermario:block_meal");
     public static final Item dangerous_delight = new PaperMarioItem(SPM).setUnlocalizedName("papermario.dangerousDelight").setTextureName("papermario:dangerous_delight");
     public static final Item dayzee_syrup = new PaperMarioItem(SPM).setUnlocalizedName("papermario.dayzeeSyrup").setTextureName("papermario:dayzee_syrup");
-    public static final Item fried_shroom_plate = new PaperMarioItem(SPM).setUnlocalizedName("papermario.friedShroomPlate").setTextureName("papermario:fried_shroom_plate");
     public static final Item golden_meal = new PaperMarioItem(SPM).setUnlocalizedName("papermario.goldenMeal").setTextureName("papermario:golden_meal");
     public static final Item hamburger = new PaperMarioItem(SPM).setUnlocalizedName("papermario.hamburger").setTextureName("papermario:hamburger");
     public static final Item herb_tea = new PaperMarioItem(SPM).setUnlocalizedName("papermario.herbTea").setTextureName("papermario:herb_tea");
@@ -406,7 +410,6 @@ public class PaperMarioItems {
         registerItem(golden_leaf, "golden_leaf");
         registerItem(fresh_pasta, "fresh_pasta");
         registerItem(keel_mango, "keel_mango");
-        registerItem(turtley_leaf, "turtley_leaf");
         registerItem(mystic_egg, "mystic_egg");
         registerItem(spite_pouch, "spite_pouch");
         registerItem(courage_meal, "courage_meal");
@@ -430,7 +433,6 @@ public class PaperMarioItems {
         registerItem(zess_deluxe, "zess_deluxe");
         registerItem(shroom_steak, "shroom_steak");
         registerItem(shroom_roast, "shroom_roast");
-        registerItem(shroom_fry, "shroom_fry");
         registerItem(icicle_pop, "icicle_pop");
         registerItem(zess_frappe, "zess_frappe");
         registerItem(dried_bouquet, "dried_bouquet");
@@ -478,7 +480,6 @@ public class PaperMarioItems {
         registerItem(block_meal, "block_meal");
         registerItem(dangerous_delight, "dangerous_delight");
         registerItem(dayzee_syrup, "dayzee_syrup");
-        registerItem(fried_shroom_plate, "fried_shroom_plate");
         registerItem(golden_meal, "golden_meal");
         registerItem(hamburger, "hamburger");
         registerItem(herb_tea, "herb_tea");

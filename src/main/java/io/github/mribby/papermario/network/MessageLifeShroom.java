@@ -1,4 +1,4 @@
-package io.github.mribby.papermario;
+package io.github.mribby.papermario.network;
 
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.network.simpleimpl.IMessage;

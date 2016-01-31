@@ -1,5 +1,6 @@
-package io.github.mribby.papermario;
+package io.github.mribby.papermario.item;
 
+import io.github.mribby.papermario.Game;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -15,7 +16,9 @@ public abstract class ItemBattle extends PaperMarioItem {
     @Override
     public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
         if (useItem(stack, world, player, null)) {
-            stack.stackSize--;
+            if (!player.capabilities.isCreativeMode) {
+                stack.stackSize--;
+            }
         }
 
         return stack;
@@ -24,7 +27,10 @@ public abstract class ItemBattle extends PaperMarioItem {
     @Override
     public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ) {
         if (useItem(stack, world, player, new MovingObjectPosition(x, y, z, side, Vec3.createVectorHelper(hitX, hitY, hitZ)))) {
-            stack.stackSize--;
+            if (!player.capabilities.isCreativeMode) {
+                stack.stackSize--;
+            }
+
             return true;
         }
 
@@ -34,7 +40,10 @@ public abstract class ItemBattle extends PaperMarioItem {
     @Override
     public boolean itemInteractionForEntity(ItemStack stack, EntityPlayer player, EntityLivingBase entity) {
         if (useItem(stack, entity.worldObj, player, new MovingObjectPosition(entity))) {
-            stack.stackSize--;
+            if (!player.capabilities.isCreativeMode) {
+                stack.stackSize--;
+            }
+
             return true;
         }
 

@@ -1,6 +1,6 @@
-package io.github.mribby.papermario;
+package io.github.mribby.papermario.item;
 
-import net.minecraft.entity.EntityLivingBase;
+import io.github.mribby.papermario.Game;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
