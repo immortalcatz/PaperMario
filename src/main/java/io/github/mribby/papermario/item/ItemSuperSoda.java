@@ -16,8 +16,6 @@ public class ItemSuperSoda extends ItemDrink {
 
     @Override
     protected void onDrink(ItemStack stack, World world, EntityPlayer player) {
-        super.onDrink(stack, world, player);
-
         if (!world.isRemote) {
             player.removePotionEffect(Potion.poison.getId());
             player.removePotionEffect(Potion.weakness.getId());
@@ -26,6 +24,6 @@ public class ItemSuperSoda extends ItemDrink {
 
     @Override
     protected boolean canUse(ItemStack stack, World world, EntityPlayer player) {
-        return super.canUse(stack, world, player) || player.getActivePotionEffect(Potion.poison) != null || player.getActivePotionEffect(Potion.weakness) != null;
+        return player.getActivePotionEffect(Potion.poison) != null || player.getActivePotionEffect(Potion.weakness) != null;
     }
 }

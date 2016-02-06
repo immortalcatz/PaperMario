@@ -18,14 +18,12 @@ public class ItemRepelGel extends ItemBattle {
 
     @Override
     protected boolean useItem(ItemStack stack, World world, EntityPlayer player, MovingObjectPosition target) {
-        if (target == null) {
-            if (!world.isRemote) {
-                player.addPotionEffect(new PotionEffect(Potion.invisibility.getId(), 20 * 20));
-            }
+        if (target != null) return false;
 
-            return true;
+        if (!world.isRemote) {
+            player.addPotionEffect(new PotionEffect(Potion.invisibility.getId(), 20 * 20));
         }
 
-        return false;
+        return true;
     }
 }

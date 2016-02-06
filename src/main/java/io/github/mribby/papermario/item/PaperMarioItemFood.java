@@ -9,11 +9,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 public class PaperMarioItemFood extends ItemFood implements IPaperMarioItem {
+    private final int hpHealAmount, fpHealAmount;
     private final Game[] games;
     private final CreativeTabs[] tabs;
 
     public PaperMarioItemFood(int hpHealAmount, int fpHealAmount, boolean isWolfFood, Game... games) {
         super(Utils.getHealthIntFromHP(hpHealAmount), getSaturation(fpHealAmount), isWolfFood);
+        this.hpHealAmount = hpHealAmount;
+        this.fpHealAmount = fpHealAmount;
         this.games = games;
         this.tabs = PaperMarioItem.getTabs(games);
         setCreativeTab(tabs[0]);
@@ -23,13 +26,25 @@ public class PaperMarioItemFood extends ItemFood implements IPaperMarioItem {
         this(hpHealAmount, fpHealAmount, false, games);
     }
 
+    public int getHpHealAmount() {
+        return hpHealAmount;
+    }
+
+    public int getFpHealAmount() {
+        return fpHealAmount;
+    }
+
     @Override
     public ItemStack onItemUseFinish(ItemStack stack, World world, EntityPlayer player) {
         --stack.stackSize;
-        player.getFoodStats().addStats(this, stack);
         world.playSoundAtEntity(player, "random.burp", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F);
         onFoodEaten(stack, world, player);
         return stack;
+    }
+
+    @Override
+    protected void onFoodEaten(ItemStack stack, World world, EntityPlayer player) {
+        player.getFoodStats().addStats(this, stack);
     }
 
     @Override

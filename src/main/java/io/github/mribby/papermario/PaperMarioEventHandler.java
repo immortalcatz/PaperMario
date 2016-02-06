@@ -18,24 +18,24 @@ public class PaperMarioEventHandler {
     @SubscribeEvent
     public void onEntityLivingDeath(LivingDeathEvent event) {
         EntityLivingBase entity = event.entityLiving;
-        boolean isCanceled = false;
+        boolean revive = false;
 
         if (entity instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) entity;
 
             if (player.inventory.consumeInventoryItem(PaperMarioItems.life_shroom)) {
-                isCanceled = true;
+                revive = true;
             }
         } else {
             ItemStack stack = entity.getHeldItem();
 
             if (stack != null && stack.getItem() == PaperMarioItems.life_shroom) {
                 entity.setCurrentItemOrArmor(0, null);
-                isCanceled = true;
+                revive = true;
             }
         }
 
-        if (isCanceled) {
+        if (revive) {
             entity.setHealth(LIFE_SHROOM_HEAL_AMOUNT);
             PaperMarioMod.network.sendToDimension(new MessageLifeShroom(entity), entity.dimension);
             event.setCanceled(true);
@@ -45,7 +45,7 @@ public class PaperMarioEventHandler {
     @SubscribeEvent
     public void onEntityLivingHurt(LivingHurtEvent event) {
         if (event.entityLiving instanceof EntityPlayer) {
-            ItemStack helmet = event.entityLiving.getEquipmentInSlot(4);
+            ItemStack helmet = event.entityLiving.getEquipmentInSlot(Utils.getArmorPosition(PaperMarioItems.stone_cap));
 
             if (helmet != null && helmet.getItem() == PaperMarioItems.stone_cap) {
                 event.setCanceled(true);
@@ -56,10 +56,10 @@ public class PaperMarioEventHandler {
     @SubscribeEvent
     public void onPlayerTick(TickEvent.PlayerTickEvent event) {
         if (event.phase == TickEvent.Phase.START) {
-            IAttributeInstance attribute = event.player.getEntityAttribute(SharedMonsterAttributes.movementSpeed);
+            IAttributeInstance speedAttribute = event.player.getEntityAttribute(SharedMonsterAttributes.movementSpeed);
 
-            if (attribute.getModifier(PaperMarioItems.STONE_CAP_MODIFIER.getID()) != null) {
-                attribute.removeModifier(PaperMarioItems.STONE_CAP_MODIFIER);
+            if (speedAttribute.getModifier(PaperMarioItems.STONE_CAP_MODIFIER.getID()) != null) {
+                speedAttribute.removeModifier(PaperMarioItems.STONE_CAP_MODIFIER);
             }
         }
     }

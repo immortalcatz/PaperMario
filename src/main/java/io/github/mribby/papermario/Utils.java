@@ -1,10 +1,14 @@
 package io.github.mribby.papermario;
 
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
+
 public class Utils {
     private static final float MAX_PLAYER_HEALTH = 20.0F;
 
     /**
      * Converts Paper Mario HP to Minecraft health
+     *
      * @param hp Paper Mario heart points (HP)
      * @return Minecraft health
      */
@@ -14,6 +18,7 @@ public class Utils {
 
     /**
      * Converts Paper Mario HP to Minecraft health
+     *
      * @param hp Paper Mario heart points (HP)
      * @return Minecraft health
      */
@@ -29,5 +34,22 @@ public class Utils {
         } while (health >= MAX_PLAYER_HEALTH);
 
         return health;
+    }
+
+    public static int getArmorPosition(Item item) {
+        if (item instanceof ItemArmor) {
+            switch (((ItemArmor) item).armorType) {
+                case 0:
+                    return 4;
+                case 1:
+                    return 3;
+                case 2:
+                    return 2;
+                case 3:
+                    return 1;
+            }
+        }
+
+        return 0;
     }
 }

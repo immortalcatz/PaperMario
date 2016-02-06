@@ -33,8 +33,10 @@ public class ItemStoneCap extends ItemArmor implements IPaperMarioItem {
     public void onArmorTick(World world, EntityPlayer player, ItemStack stack) {
         player.getEntityAttribute(SharedMonsterAttributes.movementSpeed).applyModifier(PaperMarioItems.STONE_CAP_MODIFIER);
 
-        if (!player.capabilities.isCreativeMode && world.getTotalWorldTime() % 20 == 0) {
-            stack.damageItem(1, player);//TODO not working
+        if (!world.isRemote && world.getTotalWorldTime() % 20 == 0) {
+            if (!player.capabilities.isCreativeMode) {
+                stack.damageItem(1, player);//TODO
+            }
         }
     }
 }

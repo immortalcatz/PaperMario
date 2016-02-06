@@ -18,8 +18,6 @@ public class ItemKoopaTea extends ItemDrink {
 
     @Override
     protected void onDrink(ItemStack stack, World world, EntityPlayer player) {
-        super.onDrink(stack, world, player);
-
         if (!world.isRemote) {
             player.addPotionEffect(new PotionEffect(Potion.resistance.getId(), 20 * 20, 1));
         }
